@@ -140,7 +140,7 @@ const MoviesDetailModal = styled.div`
         width: 100%;
       }
       .movieInfo {
-        padding: 30px 0 0 24px;
+        padding: 30px 10px 0 24px;
         color: var(--color-white);
         font-size: 18px;
 
