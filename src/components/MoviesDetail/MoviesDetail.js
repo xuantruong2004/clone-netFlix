@@ -4,12 +4,20 @@ import { useDispatch } from "react-redux";
 import styled, { keyframes } from "styled-components";
 import { setMovieDetail } from "../store/actions";
 import { MdClose } from "react-icons/md";
+import { BsPlayFill } from "react-icons/bs";
+import { useNavigate } from "react-router-dom";
 
 function MoviesDetail(props) {
   const { movie, showModal } = props;
   const dispatch = useDispatch();
   const handleCloseModal = () => {
     dispatch(setMovieDetail(null));
+  };
+
+  const navigate = useNavigate();
+  const handleClickWatching = (movie) => {
+    console.log(movie.id);
+    navigate(`/movies?id=${movie.id}`);
   };
   return (
     <MoviesDetailModal>
@@ -49,6 +57,13 @@ function MoviesDetail(props) {
               Run time: {movie?.runtime || movie?.episode_run_time}{" "}
             </p>
             <p className="overView">{movie?.overview}</p>
+            <button
+              className="watching"
+              onClick={() => handleClickWatching(movie)}
+            >
+              Watch Now
+              <BsPlayFill className="iconPlay" />
+            </button>
           </div>
           <div className="iconClose" onClick={() => handleCloseModal()}>
             <MdClose />
@@ -179,6 +194,31 @@ const MoviesDetailModal = styled.div`
 
           @media screen and (max-width: 688px) {
             font-size: 14px;
+          }
+        }
+
+        .watching {
+          margin-top: 16px;
+          padding: 4px 34px 4px 8px;
+          font-size: 24px;
+          background-image: linear-gradient(to right, red, yellow);
+          color: var(--color-dark);
+          text-align: center;
+          border-radius: 10px;
+
+          &:hover {
+            cursor: pointer;
+            box-shadow: 5px 0px 20px 5px red;
+          }
+          &:hover .iconPlay {
+            transform: scale(1.2);
+          }
+          .iconPlay {
+            position: absolute;
+            color: red;
+            font-size: 30px;
+            transform:scale(1)
+            transition: all 0.3 linear;
           }
         }
       }
