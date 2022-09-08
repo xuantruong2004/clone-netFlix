@@ -9,6 +9,7 @@ import { useNavigate } from "react-router-dom";
 
 function MoviesDetail(props) {
   const { movie, showModal } = props;
+  console.log(movie);
   const dispatch = useDispatch();
   const handleCloseModal = () => {
     dispatch(setMovieDetail(null));
