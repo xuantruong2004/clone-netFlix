@@ -9,14 +9,14 @@ function MovieId(props) {
     <MovieWatching>
       <div className="MovieVideo">
         <iframe
-          width="60%"
+          width="100%"
           height="500"
           scrolling="no"
           frameborder="0"
           src={`https://2embed.org/embed/${idVideo}`}
           allowfullscreen="true"
-          // webkitallowfullscreen="true"
-          // mozallowfullscreen="true"
+          webkitallowfullscreen="true"
+          mozallowfullscreen="true"
           title="Iframe Example"
         ></iframe>
       </div>
@@ -31,5 +31,16 @@ const MovieWatching = styled.div`
   background-color: var(--color-background);
 
   .MovieVideo {
+    width: 60%;
+
+    @media screen and (max-width: 1200px) {
+      width: 80%;
+    }
+    @media screen and (max-width: 969px) {
+      width: 100%;
+    }
+    @media screen and (max-width: 600px) {
+      width: 100%;
+    }
   }
 `;
