@@ -5,19 +5,18 @@ import styled from "styled-components";
 const useQuery = () => new URLSearchParams(useLocation().search);
 function MovieId(props) {
   const idVideo = useQuery().get("id");
-  console.log(idVideo);
   return (
     <MovieWatching>
       <div className="MovieVideo">
         <iframe
-          width="100%"
+          width="60%"
           height="500"
           scrolling="no"
           frameborder="0"
           src={`https://2embed.org/embed/${idVideo}`}
           allowfullscreen="true"
-          webkitallowfullscreen="true"
-          mozallowfullscreen="true"
+          // webkitallowfullscreen="true"
+          // mozallowfullscreen="true"
           title="Iframe Example"
         ></iframe>
       </div>
@@ -32,7 +31,5 @@ const MovieWatching = styled.div`
   background-color: var(--color-background);
 
   .MovieVideo {
-    width: 100%;
-    height: 100vh;
   }
 `;

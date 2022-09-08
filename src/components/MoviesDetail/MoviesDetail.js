@@ -16,7 +16,7 @@ function MoviesDetail(props) {
 
   const navigate = useNavigate();
   const handleClickWatching = (movie) => {
-    console.log(movie.id);
+    handleCloseModal();
     navigate(`/movies?id=${movie.id}`);
   };
   return (
@@ -201,7 +201,7 @@ const MoviesDetailModal = styled.div`
           margin-top: 16px;
           padding: 4px 34px 4px 8px;
           font-size: 24px;
-          background-image: linear-gradient(to right, red, yellow);
+          background-image: linear-gradient(to right, red, 60%, yellow);
           color: var(--color-dark);
           text-align: center;
           border-radius: 10px;

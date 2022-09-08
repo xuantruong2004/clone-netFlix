@@ -17,7 +17,6 @@ function SearchMovies(props) {
       dispatch(getSearchMovies(keywords));
     }
   }, [keywords, dispatch]);
-  console.log(SearchMovies);
   return (
     <SearchPane>
       {SearchMovies && SearchMovies.length > 0 ? (
