@@ -58,7 +58,9 @@ function MoviesDetail(props) {
             <p className="runTime">
               Run time: {movie?.runtime || movie?.episode_run_time}{" "}
             </p>
-            <p className="overView">{movie?.overview}</p>
+            {/* <p className="overView">
+              {movie?.overview}
+            </p> */}
             <button
               className="watching"
               onClick={() => handleClickWatching(movie)}
