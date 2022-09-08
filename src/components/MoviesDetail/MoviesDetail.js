@@ -51,8 +51,9 @@ function MoviesDetail(props) {
             </p>
             <p className="releaseDate">
               Release date:{" "}
-              {moment(movie?.first_air_date).format("DD/MM/YYYY") ||
-                moment(movie?.release_date).format("DD/MM/YYYY")}
+              {movie && movie.release_date
+                ? moment(movie?.release_date).format("DD/MM/YYYY")
+                : moment(movie?.first_air_date).format("DD/MM/YYYY")}
             </p>
             <p className="runTime">
               Run time: {movie?.runtime || movie?.episode_run_time}{" "}
