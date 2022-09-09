@@ -9,7 +9,12 @@ import { useNavigate } from "react-router-dom";
 
 function MoviesDetail(props) {
   const { movie, showModal } = props;
-  console.log(movie);
+  let overView = movie?.overview || undefined;
+  if (overView && overView.length > 220) {
+    overView = overView.slice(0, 220);
+    overView = `${overView}...`;
+  }
+  console.log(overView);
   const dispatch = useDispatch();
   const handleCloseModal = () => {
     dispatch(setMovieDetail(null));
@@ -58,9 +63,7 @@ function MoviesDetail(props) {
             <p className="runTime">
               Run time: {movie?.runtime || movie?.episode_run_time}{" "}
             </p>
-            {/* <p className="overView">
-              {movie?.overview}
-            </p> */}
+            <p className="overView">{overView}</p>
             <button
               className="watching"
               onClick={() => handleClickWatching(movie)}
