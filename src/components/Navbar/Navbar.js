@@ -65,7 +65,7 @@ const Navigation = styled.div`
   transition: all 1s;
   z-index: 100;
   @media only screen and (max-width: 600px) {
-    height: 100px;
+    height: 60px;
   }
 
   .navContainer {
@@ -76,7 +76,7 @@ const Navigation = styled.div`
     height: 100%;
 
     @media only screen and (max-width: 600px) {
-      flex-direction: column;
+      // flex-direction: column;
     }
 
     .logo {

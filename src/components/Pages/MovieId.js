@@ -10,7 +10,7 @@ function MovieId(props) {
       <div className="MovieVideo">
         <iframe
           width="100%"
-          height="500"
+          height="100%"
           scrolling="no"
           frameborder="0"
           src={`https://2embed.org/embed/${idVideo}`}
@@ -19,6 +19,7 @@ function MovieId(props) {
           mozallowfullscreen="true"
           title="Iframe Example"
         ></iframe>
+        <p>Please choose another server if the server is down</p>
       </div>
     </MovieWatching>
   );
@@ -29,10 +30,12 @@ export default MovieId;
 const MovieWatching = styled.div`
   padding: 100px 50px;
   background-color: var(--color-background);
-
+  height: 100vh;
+  display: flex;
+  align-items: center;
   .MovieVideo {
     width: 60%;
-
+    height: 500px;
     @media screen and (max-width: 1200px) {
       width: 80%;
     }
@@ -41,6 +44,11 @@ const MovieWatching = styled.div`
     }
     @media screen and (max-width: 600px) {
       width: 100%;
+      height: 300px;
+    }
+    p {
+      margin-top: 10px;
+      color: var(--color-white);
     }
   }
 `;

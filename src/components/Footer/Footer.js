@@ -17,7 +17,7 @@ function Footer(props) {
         <AiFillTwitterCircle className="icon" />
       </div>
       <div>
-        <h5>@ 2022. TruongXuan etc-Clone Netflix</h5>
+        <h5>Copyright ® 2022 NetFlix by TruogXuan All Rights.</h5>
       </div>
     </FooterWrapper>
   );
