@@ -205,12 +205,18 @@ const MoviesDetailModal = styled.div`
 
         .watching {
           margin-top: 16px;
-          padding: 4px 34px 4px 8px;
+          padding: 4px 8px 4px 8px;
           font-size: 24px;
           background-image: linear-gradient(to right, red, 60%, yellow);
           color: var(--color-dark);
           text-align: center;
           border-radius: 10px;
+          display:flex;
+          align-items:center;
+
+          @media screen and (max-width:688px){
+            font-size: 16px;
+          }
 
           &:hover {
             cursor: pointer;
@@ -220,7 +226,7 @@ const MoviesDetailModal = styled.div`
             transform: scale(1.2);
           }
           .iconPlay {
-            position: absolute;
+      
             color: red;
             font-size: 30px;
             transform:scale(1)

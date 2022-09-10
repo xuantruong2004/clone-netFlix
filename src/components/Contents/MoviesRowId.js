@@ -65,6 +65,10 @@ const SearchPane = styled.div`
     display: grid;
     gap: 20px;
 
+    @media screen and (max-width: 992px) {
+      padding: 0px;
+    }
+
     &:hover .searchItem {
       opacity: 0.7;
     }
