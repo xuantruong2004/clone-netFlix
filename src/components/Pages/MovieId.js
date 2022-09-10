@@ -1,10 +1,18 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { useSelector } from "react-redux";
 import { useLocation } from "react-router-dom";
 import styled from "styled-components";
+import MoviesRowId from "../Contents/MoviesRowId";
+import MoviesDetail from "../MoviesDetail/MoviesDetail";
 
 const useQuery = () => new URLSearchParams(useLocation().search);
 function MovieId(props) {
   const idVideo = useQuery().get("id");
+  const { PopularityMovies } = useSelector((state) => state.infoMovies);
+
+  console.log(PopularityMovies);
+
+  const { MovieDetail } = useSelector((state) => state.infoMovies);
 
   return (
     <MovieWatching>
@@ -22,6 +30,14 @@ function MovieId(props) {
         ></iframe>
         <p>Please choose another server if the server is down</p>
       </div>
+      <div className="MoviePopularity">
+        <p>Movies Popularity</p>
+        <MoviesRowId ListMovies={PopularityMovies} />
+      </div>
+      <MoviesDetail
+        showModal={MovieDetail ? true : false}
+        movie={MovieDetail}
+      />
     </MovieWatching>
   );
 }
@@ -29,12 +45,14 @@ function MovieId(props) {
 export default MovieId;
 
 const MovieWatching = styled.div`
-  padding: 100px 50px;
+  padding: 100px 50px 40px;
   background-color: var(--color-background);
-  height: 100vh;
+  color: var(--color-white);
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
+
   .MovieVideo {
     width: 70%;
     height: 600px;
@@ -51,6 +69,16 @@ const MovieWatching = styled.div`
     p {
       margin-top: 10px;
       color: var(--color-white);
+    }
+  }
+
+  .MoviePopularity {
+    width: 100%;
+    margin-top: 100px;
+
+    p {
+      text-align: center;
+      font-size: 30px;
     }
   }
 `;

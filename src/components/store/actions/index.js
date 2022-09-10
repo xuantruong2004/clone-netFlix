@@ -126,3 +126,17 @@ export const getSearchMovies = (keywords) => async (dispatch) => {
     console.log("Get Fail API Search movies", error);
   }
 };
+
+export const getPopularityMovies = () => async (dispatch) => {
+  try {
+    const result = await axios.get(
+      `${BASE_URL}/movie/popular?api_key=${API_KEY}`
+    );
+    dispatch({
+      type: Types.GET_POPULARITY_MOVIES,
+      payload: result.data.results,
+    });
+  } catch (error) {
+    console.log("Get Fail API Popularity movies", error);
+  }
+};

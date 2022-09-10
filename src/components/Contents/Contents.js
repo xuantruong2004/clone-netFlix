@@ -13,6 +13,7 @@ import {
   getRomanceMovies,
   getTopRateMovies,
   getTrendingMovies,
+  getPopularityMovies,
 } from "../store/actions";
 import styled from "styled-components";
 import { animateScroll as scroll } from "react-scroll";
@@ -43,7 +44,9 @@ function Contents(props) {
     dispatch(getHorrorMovies());
     dispatch(getRomanceMovies());
     dispatch(getDocumentaries());
+    dispatch(getPopularityMovies());
   }, [dispatch]);
+
   return (
     <div>
       <MoviesRow

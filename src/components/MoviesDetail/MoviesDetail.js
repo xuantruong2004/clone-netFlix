@@ -14,7 +14,6 @@ function MoviesDetail(props) {
     overView = overView.slice(0, 220);
     overView = `${overView}...`;
   }
-  console.log(overView);
   const dispatch = useDispatch();
   const handleCloseModal = () => {
     dispatch(setMovieDetail(null));
