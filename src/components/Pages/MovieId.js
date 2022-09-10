@@ -5,6 +5,7 @@ import styled from "styled-components";
 const useQuery = () => new URLSearchParams(useLocation().search);
 function MovieId(props) {
   const idVideo = useQuery().get("id");
+
   return (
     <MovieWatching>
       <div className="MovieVideo">
@@ -33,9 +34,10 @@ const MovieWatching = styled.div`
   height: 100vh;
   display: flex;
   align-items: center;
+  justify-content: center;
   .MovieVideo {
-    width: 60%;
-    height: 500px;
+    width: 70%;
+    height: 600px;
     @media screen and (max-width: 1200px) {
       width: 80%;
     }
