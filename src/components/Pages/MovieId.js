@@ -10,8 +10,6 @@ function MovieId(props) {
   const idVideo = useQuery().get("id");
   const { PopularityMovies } = useSelector((state) => state.infoMovies);
 
-  console.log(PopularityMovies);
-
   const { MovieDetail } = useSelector((state) => state.infoMovies);
 
   return (
@@ -21,9 +19,9 @@ function MovieId(props) {
           width="100%"
           height="100%"
           scrolling="no"
-          frameborder="0"
+          frameBorder="0"
           src={`https://2embed.org/embed/${idVideo}`}
-          allowfullscreen="true"
+          allowFullScreen={true}
           webkitallowfullscreen="true"
           mozallowfullscreen="true"
           title="Iframe Example"

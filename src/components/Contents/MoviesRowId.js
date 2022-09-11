@@ -27,25 +27,26 @@ function MoviesRowId(props) {
           },auto)`,
         }}
       >
-        {ListMovies.map((movie, index) => (
-          <div
-            key={movie.id}
-            className="searchItem"
-            onClick={() => {
-              dispatch(setMovieDetail(movie));
-              console.log("click movie");
-            }}
-          >
-            <img
-              src={
-                `https://image.tmdb.org/t/p/w500/${movie.backdrop_path}` ||
-                `https://image.tmdb.org/t/p/original/${movie.poster_path}`
-              }
-              alt={movie.name}
-            />
-            <span>{movie.name || movie.title}</span>
-          </div>
-        ))}
+        {Array.isArray(ListMovies) &&
+          ListMovies.map((movie, index) => (
+            <div
+              key={movie.id}
+              className="searchItem"
+              onClick={() => {
+                dispatch(setMovieDetail(movie));
+                console.log("click movie");
+              }}
+            >
+              <img
+                src={
+                  `https://image.tmdb.org/t/p/w500/${movie.backdrop_path}` ||
+                  `https://image.tmdb.org/t/p/original/${movie.poster_path}`
+                }
+                alt={movie.name}
+              />
+              <span>{movie.name || movie.title}</span>
+            </div>
+          ))}
       </div>
     </SearchPane>
   );
