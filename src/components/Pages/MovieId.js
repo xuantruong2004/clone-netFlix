@@ -5,8 +5,8 @@ import styled from "styled-components";
 import MoviesRowId from "../Contents/MoviesRowId";
 import MoviesDetail from "../MoviesDetail/MoviesDetail";
 
-const useQuery = () => new URLSearchParams(useLocation().search);
 function MovieId(props) {
+  const useQuery = () => new URLSearchParams(useLocation().search);
   const idVideo = useQuery().get("id");
   const { PopularityMovies } = useSelector((state) => state.infoMovies);
 
