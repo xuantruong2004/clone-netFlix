@@ -12,6 +12,10 @@ function MovieId(props) {
 
   const { MovieDetail } = useSelector((state) => state.infoMovies);
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <MovieWatching>
       <div className="MovieVideo">
