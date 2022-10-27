@@ -14,7 +14,7 @@ function MovieId(props) {
 
   useEffect(() => {
     window.scrollTo(0, 0);
-  }, []);
+  }, [idVideo]);
 
   return (
     <MovieWatching>
